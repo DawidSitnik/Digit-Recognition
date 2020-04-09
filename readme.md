@@ -1,4 +1,4 @@
-# Recognizing Handwritten Dgits from the MNIST Dataset
+# Recognizing Handwritten Dgits From the MNIST Dataset
 
 ## Dataset
 *can be downloaded from: http://yann.lecun.com/exdb/mnist*
