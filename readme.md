@@ -19,13 +19,24 @@ This approach takes one class as positive and rest all as negative and trains th
 *Such restrictive assumptions may produce many undefined and false labels, respecitvely in situations in which probability is high but not equal to one or when many clasifiers got probability equaled to 1. Being aware of all I am going to stick to that assumptions to stay consistent with one vs one classifier.*
 
 ### Perceptron Method of Sepparating the Plane
-This is type of classification is binary and supervised so it splits samples into two classes only and needs labelled classes for training. The perceptron consists of 4 parts:
+This is a type of binary and supervised classification so it splits samples into two classes only and needs labels for training. 
+The perceptron consists of 4 parts:
 -Input values of one input layer
 -Weights and bias
 -Net sum
 -Activation function
+
+For the proper work of classifier the weights are needed to be set first. It is done in few steps:
+a. Initialize weights with random numbers
+b. for each sample in the training dataset:
+- make prediction
+- if you have made an error increment error value
+- update weights by adding alpha * error * sample weights to them.
+
 The steps which are taken for classification are:
 a. All the inputs are multiplied with their weights w.
 b. The weighted sum is callculated by adding all values from previous step.
-c. Apply a
+c. The activation function is applied. 
+
+
 
