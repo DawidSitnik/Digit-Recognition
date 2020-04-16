@@ -38,5 +38,7 @@ a. All the inputs are multiplied with their weights w.
 b. The weighted sum is callculated by adding all values from previous step.
 c. The activation function is applied. 
 
+### Final result of the classification
 
+#### One vs One perceptron classfier
 
