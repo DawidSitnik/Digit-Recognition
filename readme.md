@@ -60,6 +60,6 @@ Each type of classification was performed on expanded and normal version of data
 Confusion Matrix for training, not expanded dataset:
 
 <p align="center">
-  <img src = "https://imgur.com/NsmNBCc"/>
+  <img src = "https://imgur.com/NsmNBCc.img"/>
 </p>
 
