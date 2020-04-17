@@ -47,9 +47,19 @@ Another modification that was made was feature expanding, which was based on add
 Each type of classification was performed on expanded and normal version of dataset.
 
 #### One vs One perceptron classfier
+
+*Every classifier was trained with parameters alpha = 0.00001, epochs = 50*
+
 | Dataset               | Correct     | Misstakes | Not Classified  |
 | ----------------------| ----------- |-----------|-----------------|
 | Expanded, test        | 0.7974      | 0.0652    | 0.1374          |
 | Expanded, train       | 0.7894      | 0.0695    | 0.1410          |
 | Not Expanded, test    | 0.8372      | 0.1455    | 0.0173          |
 | Not Expanded, train   | 0.8246      | 0.1557    | 0.0195          |
+
+Confusion Matrix for training, not expanded dataset:
+
+<p align="center">
+  <img src = "https://imgur.com/NsmNBCc"/>
+</p>
+
