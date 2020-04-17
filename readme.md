@@ -69,4 +69,12 @@ The digit with the best result was 1 with the score of 6266 positive classificat
 
 It is hard to find any pattern in the confusion matrix, overall result of the classifier is acceptable. 
 
+### SVM Classifier
+The library *libVSM* was used to compare perceptron method with another methods of classification. The library implements SVM classifier which has voting mechanism inside, so for this part there is no need to use any of voting functions. *LibSVM* implements "one-against-one" multi-class method, so there are k(k-1)/2 binary models, where k is the number of classes.
+
+We can consider two ways to conduct parameter selection.
+
+- For any two classes of data, a parameter selection procedure is conducted. Finally, each decision function has its own optimal parameters.
+- The same parameters are used for all k(k-1)/2 binary classification problems. We select parameters that achieve the highest overall performance.
+Each has its own advantages. A single parameter set may not be uniformly good for all k(k-1)/2 decision functions. However, as the overall accuracy is the final consideration, one parameter set for one decision function may lead to over-fitting. In the paper *Chen, Lin, and Schölkopf, A tutorial on nu-support vector machines. Applied Stochastic Models in Business and Industry, 21(2005), 111-136*, they have experimentally shown that the two methods give similar performance. Therefore, currently the parameter selection in LIBSVM takes the second approach by considering the same parameters for all k(k-1)/2 models.
 
