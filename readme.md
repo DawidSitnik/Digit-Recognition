@@ -47,7 +47,9 @@ Another modification that was made was feature expanding, which was based on add
 Each type of classification was performed on expanded and normal version of dataset.
 
 #### One vs One perceptron classfier
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Dataset               | Correct     | Misstakes | Not Classified  |
+| ----------------------| ----------- |-----------|-----------------|
+| Expanded, test        | 0.7974      | 0.0652    | 0.1374          |
+| Expanded, train       | 0.7894      | 0.0695    | 0.1410          |
+| Not Expanded, test    | 0.8372      | 0.1455    | 0.0173          |
+| Not Expanded, train   | 0.8246      | 0.1557    | 0.0195          |
