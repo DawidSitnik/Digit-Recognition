@@ -83,6 +83,6 @@ Classification Results:
 | Dataset               | Correct     | Misstakes | Not Classified  |
 | ----------------------| ----------- |-----------|-----------------|
 | Expanded, test        | 0.9839      | 0.0035    | 0.0095          |
-| Expanded, train       | 0.7894      | 0.0695    | 0.1410          |
-| Not Expanded, test    | 0.8372      | 0.1455    | 0.0173          |
-| Not Expanded, train   | 0.8246      | 0.1557    | 0.0195          |
+| Expanded, train       | 0.9955      | 0.0091    | 0.0098          |
+| Not Expanded, test    | 0.      | 0.    | 0.          |
+| Not Expanded, train   | 0.      | 0.    | 0.          |
