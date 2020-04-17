@@ -84,5 +84,5 @@ Classification Results:
 | ----------------------| ----------- |-----------|-----------------|
 | Expanded, test        | 0.9839      | 0.0035    | 0.0095          |
 | Expanded, train       | 0.9955      | 0.0091    | 0.0098          |
-| Not Expanded, test    | 0.      | 0.    | 0.          |
-| Not Expanded, train   | 0.      | 0.    | 0.          |
+| Not Expanded, test    | 0.9821      | 0.0035    | 0.0095          |
+| Not Expanded, train   | 0.9910      | 0.0017    | 0.0097          |
