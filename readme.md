@@ -63,3 +63,10 @@ Confusion Matrix for training, not expanded dataset:
   <img src = "https://imgur.com/NsmNBCc.png"/>
 </p>
 
+Deducing from above, it can be stated that the classifier has the biggest problem with classification digit 5 (only 3785 positive classification), which was frequentely considered as 3 (306 cases), as 1 (270 cases) or didn't get maximum amount of votes and were not classified (265 cases).
+
+The digit with the best result was 1 with the score of 6266 positive classifications. This digit was mostly mistaken with digit nr 8 ( 159 cases ) and 2 (96 cases).
+
+It is hard to find any pattern in the confusion matrix, overall result of the classifier is acceptable. 
+
+
