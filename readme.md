@@ -38,7 +38,16 @@ a. All the inputs are multiplied with their weights w.
 b. The weighted sum is callculated by adding all values from previous step.
 c. The activation function is applied. 
 
+### Dataset Preparation
+
+Before training classifiers the data was transformed with **PCA** to reduce its dimensionality to 40. 
+Another modification that was made was feature expanding, which was based on adding some extra attributes which were multiplications of original features xi * xj for i <= j. So if we had F attributes at the beggining we should get F + F(F-1)/2 after the transformation. 
+
 ### Final result of the classification
+Each type of classification was performed on expanded and normal version of dataset.
 
 #### One vs One perceptron classfier
-
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
