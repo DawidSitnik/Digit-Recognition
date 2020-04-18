@@ -39,27 +39,38 @@ tstl += 1;
 %tset;
 
 %[sepplane fp fn] = perceptron(tset, 5, 0.1)
+tvec = expandFeatures(tvec);
 
-% training of the whole ensemble
-ovo = trainOVOensamble(tvec, tlab, @perceptron)
-x = clock
-save(strcat('./expotential_perceptron_variables_', datestr(x)))
+%training of the whole ensemble
+ovo = trainOVOensamble(tvec, tlab, @perceptron);
 
+%check your ensemble on train set
+clab = unamvoting(tvec, ovo);
+cfmx = confMx(tlab, clab);
+compErrors(cfmx);
 
-% check your ensemble on train set
-%clab = unamvoting(tvec, ovo);
-%cfmx = confMx(tlab, clab)
-%compErrors(cfmx)
-
-% repeat on test set
-%clab = unamvoting(tstv, ovo);
-%cfmx = confMx(tstl, clab)
-%compErrors(cfmx)
-
-% training of the whole ensemble
-%ovr = trainOVRensamble(tvec, tlab, @perceptron)
-%clab = unamvoting_ovr(tvec, ovr)
-%cfmx = confMx(tlab, clab)
-%compErrors(cfmx)
 %x = clock
-%save(strcat('./variables_ovr_all_', datestr(x)))
+%save(strcat('./variables/ovo_lr_0.00005_epochs_200_', datestr(x)));
+%load('./variables/ovo_ext_e_50_a_0.00001');
+
+%repeat on test set
+%tstv = expandFeatures(tstv)
+clab = unamvoting(tstv, ovo);
+cfmx = confMx(tstl, clab);
+compErrors(cfmx);
+
+%training of the whole ensemble
+ovr = trainOVRensamble(tvec, tlab, @perceptron);
+clab = unamvoting_ovr(tvec, ovr);
+cfmx = confMx(tlab, clab);
+compErrors(cfmx);
+x = clock
+%save(strcat('./variables_ovr_e_50_a_0.00001_', datestr(x)))
+
+%repeat on test set
+clab = unamvoting(tstv, ovo);
+cfmx = confMx(tstl, clab);
+compErrors(cfmx);
+
+model = svmtrain(tlab, tvec);
+[predict_label, accuracy, dec_values] = svmpredict(tstl, tstv, model);

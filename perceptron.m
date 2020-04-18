@@ -1,4 +1,4 @@
-function [sepplane fp fn] = perceptron(tset, epochs=1, alpha=0.001)
+function [sepplane fp fn] = perceptron(tset, epochs=5, alpha=0.0001)
 % Computes separating plane (linear classifier) using
 % perceptron method.
 
@@ -17,7 +17,7 @@ function [sepplane fp fn] = perceptron(tset, epochs=1, alpha=0.001)
   for epoch = 1:epochs
       for j = 1:size(tset)(1)
           prediction = predict(tset(j,:), weights);
-          error += exp(tset(j,end) - prediction);
+          error += (tset(j,end) - prediction);
           if mod(j, 50) == 0
             weights += alpha * error * [1 tset(j, 1:end-1)];
             error = 0;

@@ -1,4 +1,4 @@
-function clab = unamvoting(tset, clsmx)
+function clab = unamvoting_ovr(tset, clsmx)
 % prawdopodobnie można w ogóle nie zmieniać tej funkcji
 % Simple unanimity voting function 
 % 	tset - matrix containing test data; one row represents one sample

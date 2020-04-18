@@ -35,5 +35,5 @@ function votes = voting_ovr(tset, clsmx)
 
 		% for all samples that produced negative response 
 		%   increase number of votes for negative class by one
-		% votes(res < 0, nid) += 1;
+		votes(res < 0, nid) += 1;
 	end
