@@ -86,3 +86,24 @@ Classification Results:
 | Expanded, train       | 0.9955      | 0.0091    | 0.0098          |
 | Not Expanded, test    | 0.9821      | 0.0035    | 0.0095          |
 | Not Expanded, train   | 0.9910      | 0.0017    | 0.0097          |
+
+### Result Summary
+
+#### Perceptron vs SVM
+In this type of problems the SVM outperformes Perceptron, giving 98,39% of positive classifications, when Perseptron scores only 83.72 in the best case. However, this fact doesn't mean, that Perceptron is worse in every case and I will try to explain good and bad sides of each. 
+
+Perceptron is an online algorithm which means it can processes the data points one by one. On the other hand, SVM needs all the training data and only then starts building the classifier. So in case of a new data, we can't update the model but we need to train it once again. 
+
+The perceptron algorithm tries to reduce error and thus, gives a good enough classification for the data points. However, since SVM looks at maximizing the margin(by reducing (1/2 * (theta)^2)) allows you to find the most optimal solution. Thus, SVM can help you classify the test data in a better way as a large margin can help you segregate it better.
+
+Along with maximizing the margin, the SVM algorithm also provides you with the concept of slack variables(soft margin) which again helps you classify test data in a better way.
+
+In any case, the theory doesn't works in practice, neither it was in this case. As we could see in the tables which summarizes the result, perseptron performed better on test set, not the training one. This result from some kind of a randomness connected with perceptron classifier, which isn't a deterministic algorithm.  
+
+### Extended vs Not Extended Dataset
+In case of perceptron classification it didn't brighten the result, because it usually gave 3.5% worse score. In this case, 
+extending the size of the dataset didn't influence the training time too much, which is quite abvious if we look at the implementation of perceptron.
+
+In SVM classification, extending dataset, boosted the result of one percent, but it was at the cost of the training time, which was significantly bigger.
+
+
