@@ -50,7 +50,7 @@ Another modification that was made was feature expanding, which was based on add
 ### Final result of the classification
 Each type of classification was performed on the expanded and normal version of the dataset.
 
-#### One vs One perceptron classfier
+#### One vs One Perceptron Classfier
 
 *Every classifier was trained with parameters alpha = 0.00001, epochs = 50*
 
@@ -72,6 +72,26 @@ Deducing from above, it can be stated that the classifier has the biggest proble
 The digit with the best result was 1 with a score of 6266 positive classifications. This digit was mostly mistaken with digit nr 8 ( 159 cases ) and 2 (96 cases).
 
 It is hard to find any pattern in the confusion matrix, the overall result of the classifier is acceptable. 
+
+#### One vs Resr Perceptron Classfier
+
+*Every classifier was trained with parameters alpha = 0.00001, epochs = 50*
+
+| Dataset               | Correct     | Misstakes | Not Classified  |
+| ----------------------| ----------- |-----------|-----------------|
+| Expanded, test        | 0.      | 0.    | 0.          |
+| Expanded, train       | 0.      | 0.    | 0.          |
+| Not Expanded, test    | 0.8206      | 0.1566    | 0.0228          |
+| Not Expanded, train   | 0.8073      | 0.1689    | 0.0236          |
+
+Confusion Matrix for training, not expanded dataset:
+
+<p align="center">
+  <img src = "https://imgur.com/NxZ7GaE.png"/>
+</p>
+
+On the basis of second confusion matrix it can be easilly seen that *One vs Rest* classifier had the biggest problem with classification digit number 5, which was positively classified only 3936 times which gives 72% of positive classifications only. This classifier missmatched digit number 5 usually with digits 1 (216 times), 8 (210 times) and 0 (166 times). The best classification was obtained for digit number 1, which was positively classified for 89% of cases.
+
 
 ### SVM Classifier
 The library *libVSM* was used to compare the perceptron method with another method of classification. The library implements an SVM classifier that has a voting mechanism inside, so for this part, there is no need to use any voting functions. *LibSVM* implements the "one-against-one" multi-class method, so there are k(k-1)/2 binary models, where k is the number of classes.
