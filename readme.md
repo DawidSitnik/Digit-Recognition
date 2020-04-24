@@ -94,7 +94,7 @@ Classification Results:
 ### Result Summary
 
 #### Perceptron vs SVM
-In this type of problem, the SVM outperforms Perceptron, giving 98,39% of positive classifications, when Perceptron scores only 83.72 in the best case. However, this fact doesn't mean, that Perceptron is worse in every case and I will try to explain the good and bad sides of each. 
+In this type of problem, the SVM outperforms Perceptron, giving 98,39% of positive classifications, when Perceptron scores only 83.72 in the best case. We can pretend that the worse score was caused by perceptron inability of separating not linear cases. However, this fact doesn't mean, that Perceptron is worse in every case and I will try to explain the good and bad sides of each. 
 
 Perceptron is an online algorithm which means it can processes the data points one by one. On the other hand, SVM needs all the training data and only then starts building the classifier. So in case of new data, we can't update the model but we need to train it once again. 
 
