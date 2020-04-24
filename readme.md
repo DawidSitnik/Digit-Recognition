@@ -45,7 +45,7 @@ c. The activation function is applied.
 ### Dataset Preparation
 
 Before training classifiers the data was transformed with **PCA** to reduce its dimensionality to 40. 
-Another modification that was made was feature expanding, which was based on adding some extra attributes which were multiplications of original features xi * xj for i <= j. So if we had F attributes at the beginning we should get F + F(F-1)/2 after the transformation. 
+Another modification that was made was feature expanding, which was based on adding some extra attributes which were multiplications of original features xi * xj for I <= j. So if we had F attributes at the beginning we should get F + F(F-1)/2 after the transformation. 
 
 ### Final result of the classification
 Each type of classification was performed on the expanded and normal version of the dataset.
@@ -79,8 +79,8 @@ It is hard to find any pattern in the confusion matrix, the overall result of th
 
 | Dataset               | Correct     | Misstakes | Not Classified  |
 | ----------------------| ----------- |-----------|-----------------|
-| Expanded, test        | 0.      | 0.    | 0.          |
-| Expanded, train       | 0.      | 0.    | 0.          |
+| Expanded, test        | 0.8274      | 0.1270    | 0.0456          |
+| Expanded, train       | 0.8217      | 0.1324    | 0.0458          |
 | Not Expanded, test    | 0.8206      | 0.1566    | 0.0228          |
 | Not Expanded, train   | 0.8073      | 0.1689    | 0.0236          |
 
@@ -90,7 +90,7 @@ Confusion Matrix for training, not expanded dataset:
   <img src = "https://imgur.com/NxZ7GaE.png"/>
 </p>
 
-On the basis of second confusion matrix it can be easilly seen that *One vs Rest* classifier had the biggest problem with classification digit number 5, which was positively classified only 3936 times which gives 72% of positive classifications only. This classifier missmatched digit number 5 usually with digits 1 (216 times), 8 (210 times) and 0 (166 times). The best classification was obtained for digit number 1, which was positively classified for 89% of cases.
+Based on the second confusion matrix it can be easily seen that *One vs Rest* classifier had the biggest problem with classification digit number 5, which was positively classified only 3936 times which gives 72% of positive classifications only. This classifier mismatched digit number 5 usually with digits 1 (216 times), 8 (210 times), and 0 (166 times). The best classification was obtained for digit number 1, which was positively classified for 89% of cases.
 
 
 ### SVM Classifier
@@ -114,7 +114,7 @@ Classification Results:
 ### Result Summary
 
 #### Perceptron vs SVM
-In this type of problem, the SVM outperforms Perceptron, giving 98,39% of positive classifications, when Perceptron scores only 83.72 in the best case. We can pretend that the worse score was caused by perceptron inability of separating not linear cases. However, this fact doesn't mean, that Perceptron is worse in every case and I will try to explain the good and bad sides of each. 
+In this type of problem, the SVM outperforms Perceptron, giving 98,39% of positive classifications, when Perceptron scores only 83.72 in the best case. We can pretend that the worse score was caused by the perceptron's inability of separating not linear cases. However, this fact doesn't mean, that Perceptron is worse in every case and I will try to explain the good and bad sides of each. 
 
 Perceptron is an online algorithm which means it can processes the data points one by one. On the other hand, SVM needs all the training data and only then starts building the classifier. So in case of new data, we can't update the model but we need to train it once again. 
 
@@ -125,7 +125,9 @@ Along with maximizing the margin, the SVM algorithm also provides you with the c
 In any case, the theory doesn't work in practice, neither it was in this case. As we could see in the tables which summarizes the result, the perceptron performed better on the test set, not the training one. This results from some kind of randomness connected with the perceptron classifier, which isn't a deterministic algorithm.  
 
 ### Extended vs Not Extended Dataset
-In the case of perceptron classification, it didn't brighten the result, because it usually gave a 3.5% worse score. In this case, 
-extending the size of the dataset didn't influence the training time too much, which is quite obvious if we look at the implementation of the perceptron.
+In the case of one vs one perceptron classification, it didn't brighten the result, because it usually gave a 3.5% worse score. 
+In one vs rest classifier, the result was slightly better. However, the boost was that small, that it could be caused by randomness rather than a real positive influence on the classifier. 
+
+In the perceptron classifier extending the size of the dataset didn't influence the training time too much, which is quite obvious if we look at the implementation of the perceptron.
 
 In SVM classification, extending the dataset, boosted the result of one percent, but it was at the cost of the training time, which was significantly bigger.
