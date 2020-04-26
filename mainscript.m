@@ -1,10 +1,3 @@
-% mainscript is rather short this time
-% podczas tworzenia własnego klasyfikatora warto zerknąć na 
-% macierz pomyłek tego najlepszego który zrobiliśmy poprzednio
-% i może jakoś się tym zasugerować
-% dodatkowo warto będzie zapytać się kożuszka czy nasz klasyfikator 
-% w ogóle ma jakiś sens zanim zaczniemy go implementować
-% primary component count
 comp_count = 40; 
 
 [tvec tlab tstv tstl] = readSets(); 
@@ -54,23 +47,23 @@ compErrors(cfmx);
 %load('./variables/ovo_ext_e_50_a_0.00001');
 
 %repeat on test set
-%tstv = expandFeatures(tstv)
-%clab = unamvoting(tstv, ovo);
-%cfmx = confMx(tstl, clab);
-%compErrors(cfmx);
+tstv = expandFeatures(tstv)
+clab = unamvoting(tstv, ovo);
+cfmx = confMx(tstl, clab);
+compErrors(cfmx);
 
 %training of the whole ensemble
-%ovr = trainOVRensamble(tvec, tlab, @perceptron);
-%clab = unamvoting_ovr(tvec, ovr);
-%cfmx = confMx(tlab, clab);
-%compErrors(cfmx);
+ovr = trainOVRensamble(tvec, tlab, @perceptron);
+clab = unamvoting_ovr(tvec, ovr);
+cfmx = confMx(tlab, clab);
+compErrors(cfmx);
 %x = clock
 %%save(strcat('./variables_ovr_e_50_a_0.00001_', datestr(x)))
 
-%repeat on test set
-%clab = unamvoting(tstv, ovo);
-%cfmx = confMx(tstl, clab);
-%compErrors(cfmx);
+repeat on test set
+clab = unamvoting(tstv, ovo);
+cfmx = confMx(tstl, clab);
+compErrors(cfmx);
 
-%model = svmtrain(tlab, tvec);
-%[predict_label, accuracy, dec_values] = svmpredict(tstl, tstv, model);
+model = svmtrain(tlab, tvec);
+[predict_label, accuracy, dec_values] = svmpredict(tstl, tstv, model);
