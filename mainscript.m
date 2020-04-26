@@ -55,22 +55,22 @@ compErrors(cfmx);
 
 %repeat on test set
 %tstv = expandFeatures(tstv)
-clab = unamvoting(tstv, ovo);
-cfmx = confMx(tstl, clab);
-compErrors(cfmx);
+%clab = unamvoting(tstv, ovo);
+%cfmx = confMx(tstl, clab);
+%compErrors(cfmx);
 
 %training of the whole ensemble
-ovr = trainOVRensamble(tvec, tlab, @perceptron);
-clab = unamvoting_ovr(tvec, ovr);
-cfmx = confMx(tlab, clab);
-compErrors(cfmx);
-x = clock
-%save(strcat('./variables_ovr_e_50_a_0.00001_', datestr(x)))
+%ovr = trainOVRensamble(tvec, tlab, @perceptron);
+%clab = unamvoting_ovr(tvec, ovr);
+%cfmx = confMx(tlab, clab);
+%compErrors(cfmx);
+%x = clock
+%%save(strcat('./variables_ovr_e_50_a_0.00001_', datestr(x)))
 
 %repeat on test set
-clab = unamvoting(tstv, ovo);
-cfmx = confMx(tstl, clab);
-compErrors(cfmx);
+%clab = unamvoting(tstv, ovo);
+%cfmx = confMx(tstl, clab);
+%compErrors(cfmx);
 
-model = svmtrain(tlab, tvec);
-[predict_label, accuracy, dec_values] = svmpredict(tstl, tstv, model);
+%model = svmtrain(tlab, tvec);
+%[predict_label, accuracy, dec_values] = svmpredict(tstl, tstv, model);
